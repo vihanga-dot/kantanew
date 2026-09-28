@@ -120,8 +120,11 @@ function initHeroSlider() {
 function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
     const menuToggle = document.querySelector('.menu-toggle');
+    if (!navLinks || !menuToggle) return;
     navLinks.classList.toggle('active');
     menuToggle.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+    menuToggle.setAttribute('aria-label', navLinks.classList.contains('active') ? 'Close menu' : 'Open menu');
 }
 
 // Add scroll effect to navbar
@@ -215,6 +218,12 @@ function displayProducts(productGroups) {
     const productGrid = document.getElementById('productGrid');
     if (!productGrid) return;
 
+    const resultsCount = document.getElementById('productResults');
+    if (resultsCount) {
+        const productCount = productGroups.length;
+        resultsCount.textContent = `${productCount} ${productCount === 1 ? 'product' : 'products'}`;
+    }
+
     if (productGroups.length === 0) {
         productGrid.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
@@ -231,7 +240,7 @@ function displayProducts(productGroups) {
             <div class="product-card" onclick='showProductDetail(${JSON.stringify(group)})'>
                 <div class="product-image">
                     ${product.image ?
-                        `<img src="${product.image}" alt="${product.name}" class="product-img" />` :
+                        `<img src="${product.image}" alt="${product.name}" class="product-img" width="400" height="400" loading="lazy" />` :
                         `<div class="fallback-text">${product.icon || ' biscuit '}</div>`}
                 </div>
                 <div class="product-info">
@@ -327,6 +336,13 @@ function filterProductsByDropdown() {
     }
 
     displayProducts(groupProducts(filteredProducts));
+    const params = new URLSearchParams(window.location.search);
+    if (selectedPrice) params.set('price', selectedPrice);
+    else params.delete('price');
+    if (selectedProduct) params.set('product', selectedProduct);
+    else params.delete('product');
+    const query = params.toString();
+    window.history.replaceState({}, '', `${window.location.pathname}${query ? `?${query}` : ''}`);
 }
 
 function clearDropdownFilters() {
@@ -599,6 +615,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const priceParam = urlParams.get('price');
+        const productParam = urlParams.get('product');
 
         // If price parameter exists, select the corresponding dropdown option
         if (priceParam) {
@@ -608,6 +625,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 // Trigger the update function to populate dependent dropdowns
                 setTimeout(() => {
                     updateProductDropdown();
+                    const productSelect = document.getElementById('productSelect');
+                    if (productSelect && productParam) productSelect.value = productParam;
                     // Also trigger the actual filtering
                     filterProductsByDropdown();
                 }, 100);

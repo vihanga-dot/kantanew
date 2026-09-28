@@ -21,11 +21,11 @@
                     <div class="company-name">Kanta</div>
                 </a>
             </div>
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false" type="button">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html" class="active">Products</a></li>
@@ -43,10 +43,11 @@
 
     <div class="container">
         <div class="products-container">
-            <div class="filter-sidebar">
-                <h2 style="color: var(--primary-red); margin-bottom: 1.5rem;">Product Categories</h2>
+            <aside class="filter-sidebar" aria-label="Product filters">
+                <p class="eyebrow">Browse the range</p>
+                <h2>Find your favourite.</h2>
                 <div class="filter-group">
-                    <label for="priceSelect" style="display: block; margin-bottom: 0.5rem; color: var(--primary-red);">Price Range:</label>
+                    <label for="priceSelect">Price range</label>
                     <select id="priceSelect" class="filter-dropdown">
                         <option value="">All Prices</option>
                         <option value="200">Rs. 200</option>
@@ -58,16 +59,19 @@
                 </div>
 
                 <div class="filter-group">
-                    <label for="productSelect" style="display: block; margin-bottom: 0.5rem; color: var(--primary-red);">Product Name:</label>
+                    <label for="productSelect">Product name</label>
                     <select id="productSelect" class="filter-dropdown">
                         <option value="">All Products</option>
                     </select>
                 </div>
 
-                <button class="btn-secondary" onclick="clearDropdownFilters()" style="margin-top: 1.5rem;">Clear Filters</button>
-            </div>
+                <button class="btn-secondary" onclick="clearDropdownFilters()" style="margin-top: 1.5rem;" type="button">Clear filters</button>
+            </aside>
             <div class="products-main">
-                <div class="product-grid" id="productGrid">
+                <div class="products-toolbar">
+                    <p id="productResults" class="results-count" aria-live="polite"></p>
+                </div>
+                <div class="product-grid" id="productGrid" aria-live="polite">
                     <!-- Products will be dynamically populated by JavaScript -->
                 </div>
             </div>
@@ -77,7 +81,7 @@
     <!-- Product Modal -->
     <div id="productModal" class="modal">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <button class="modal-close" onclick="closeModal()" aria-label="Close product details" type="button">&times;</button>
             <div class="modal-icon" id="modalIcon"></div>
             <h2 id="modalTitle" style="color: var(--primary-red);"></h2>
             <p><strong>Price:</strong> <span id="modalPrice"></span></p>
