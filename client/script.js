@@ -409,11 +409,7 @@ function showProductDetail(productGroup) {
 
     const product = productGroup[0];
 
-    if (product.image) {
-        document.getElementById('modalIcon').innerHTML = `<img src="${product.image}" alt="${product.name}" class="modal-product-img" /><div class="fallback-text modal-fallback" style="display:none;">${product.icon || ' biscuit '}</div>`;
-    } else {
-        document.getElementById('modalIcon').textContent = product.icon || ' biscuit ';
-    }
+    renderModalProductImage(product);
     document.getElementById('modalTitle').textContent = product.name;
     document.getElementById('modalPrice').textContent = `Rs. ${product.price}`;
     document.getElementById('modalWeight').textContent = product.weight;
@@ -424,13 +420,15 @@ function showProductDetail(productGroup) {
     modalColors.innerHTML = '';
     if (productGroup.length > 1) {
         productGroup.forEach(p => {
-            const colorCircle = document.createElement('span');
+            const colorCircle = document.createElement('button');
             colorCircle.className = 'color-circle';
+            colorCircle.type = 'button';
             colorCircle.style.backgroundColor = getCssColor(p.color);
             colorCircle.dataset.color = p.color;
             colorCircle.title = p.color;
+            colorCircle.setAttribute('aria-label', `Show ${p.color} ${p.name}`);
             colorCircle.onclick = () => {
-                document.getElementById('modalIcon').innerHTML = `<img src="${p.image}" alt="${p.name}" class="modal-product-img" />`;
+                renderModalProductImage(p);
                 document.getElementById('modalColor').textContent = p.color.charAt(0).toUpperCase() + p.color.slice(1);
             };
             modalColors.appendChild(colorCircle);
@@ -447,24 +445,41 @@ function showProductDetail(productGroup) {
             modalContent.classList.add('show');
         }
 
-        // Add error handling for modal image
-        const modalImg = document.querySelector('.modal-product-img');
-        if (modalImg) {
-            modalImg.addEventListener('error', function() {
-                if (this.parentElement && this.nextElementSibling) {
-                    this.style.display = 'none';
-                    this.nextElementSibling.style.display = 'flex';
-                }
-            });
-
-            modalImg.addEventListener('load', function() {
-                if (this.parentElement && this.nextElementSibling) {
-                    this.style.display = 'block';
-                    this.nextElementSibling.style.display = 'none';
-                }
-            });
-        }
+        setupModalProductImage();
     }, 10);
+}
+
+function renderModalProductImage(product) {
+    const modalIcon = document.getElementById('modalIcon');
+    if (!modalIcon) return;
+
+    if (!product.image) {
+        modalIcon.textContent = product.icon || ' biscuit ';
+        return;
+    }
+
+    modalIcon.innerHTML = `<img src="${product.image}" alt="${product.name}" class="modal-product-img" width="400" height="230" /><div class="fallback-text modal-fallback" style="display:none;">${product.icon || ' biscuit '}</div>`;
+    setupModalProductImage();
+}
+
+function setupModalProductImage() {
+    const modalImg = document.querySelector('.modal-product-img');
+    if (!modalImg) return;
+
+    const fallback = modalImg.nextElementSibling;
+    modalImg.addEventListener('error', () => {
+        modalImg.style.display = 'none';
+        if (fallback) fallback.style.display = 'flex';
+    }, { once: true });
+    modalImg.addEventListener('load', () => {
+        modalImg.classList.add('is-loaded');
+        modalImg.style.display = 'block';
+        if (fallback) fallback.style.display = 'none';
+    }, { once: true });
+    if (modalImg.complete) {
+        if (modalImg.naturalWidth > 0) modalImg.classList.add('is-loaded');
+        else modalImg.dispatchEvent(new Event('error'));
+    }
 }
 
 function closeModal() {
