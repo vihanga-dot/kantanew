@@ -37,6 +37,11 @@ alter table public.profiles enable row level security;
 alter table public.snacks enable row level security;
 alter table public.site_settings enable row level security;
 
+create policy "Users can read their own profile"
+on public.profiles for select
+to authenticated
+using (id = auth.uid());
+
 create or replace function public.is_owner()
 returns boolean
 language sql
