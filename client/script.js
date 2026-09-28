@@ -151,35 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize products page if on products page
-    if (document.getElementById('productGrid')) {
-        // Populate all dropdowns with all available options
-        updateProductDropdown(); // This populates products dropdown
-
-
-        // Get URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const priceParam = urlParams.get('price');
-
-        // If price parameter exists, select the corresponding dropdown option
-        if (priceParam) {
-            const priceSelect = document.getElementById('priceSelect');
-            if (priceSelect) {
-                priceSelect.value = priceParam;
-                // Trigger the update function to populate dependent dropdowns
-                setTimeout(() => {
-                    updateProductDropdown();
-                    updateColorDropdown();
-                    // Also trigger the actual filtering
-                    filterProductsByDropdown();
-                }, 100);
-            }
-        } else {
-            // If no price parameter, just initialize the products
-            displayAllProducts();
-        }
-    }
-
     // Initialize price carousel if on home page
     if (document.getElementById('priceCarousel')) {
         initPriceSlides();
@@ -368,6 +339,19 @@ function clearDropdownFilters() {
     // Repopulate all dropdowns with all options
     updateProductDropdown(); // This will clear the color dropdown too
     displayAllProducts();
+}
+
+function initProductFilters() {
+    const priceSelect = document.getElementById('priceSelect');
+    const productSelect = document.getElementById('productSelect');
+    if (!priceSelect || !productSelect) return;
+
+    priceSelect.addEventListener('change', () => {
+        updateProductDropdown();
+        filterProductsByDropdown();
+    });
+
+    productSelect.addEventListener('change', filterProductsByDropdown);
 }
 
 function displayAllProducts() {
@@ -607,6 +591,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Initialize products page if on products page
     if (document.getElementById('productGrid')) {
+        initProductFilters();
+
         // Populate all dropdowns with all available options
         updateProductDropdown(); // This populates products dropdown
 

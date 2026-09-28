@@ -47,7 +47,7 @@
                 <h2 style="color: var(--primary-red); margin-bottom: 1.5rem;">Product Categories</h2>
                 <div class="filter-group">
                     <label for="priceSelect" style="display: block; margin-bottom: 0.5rem; color: var(--primary-red);">Price Range:</label>
-                    <select id="priceSelect" onchange="updateProductDropdown(); filterProductsByDropdown();" class="filter-dropdown">
+                    <select id="priceSelect" class="filter-dropdown">
                         <option value="">All Prices</option>
                         <option value="200">Rs. 200</option>
                         <option value="100">Rs. 100</option>
@@ -59,7 +59,7 @@
 
                 <div class="filter-group">
                     <label for="productSelect" style="display: block; margin-bottom: 0.5rem; color: var(--primary-red);">Product Name:</label>
-                    <select id="productSelect" onchange="filterProductsByDropdown()" class="filter-dropdown">
+                    <select id="productSelect" class="filter-dropdown">
                         <option value="">All Products</option>
                     </select>
                 </div>
