@@ -74,6 +74,7 @@ export default function AdminPanel() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginPending, setLoginPending] = useState(false);
+  const [loginMessage, setLoginMessage] = useState("");
   const [section, setSection] = useState<"catalog" | "site">("catalog");
   const [search, setSearch] = useState("");
   const [snacks, setSnacks] = useState<Snack[]>([]);
@@ -105,19 +106,34 @@ export default function AdminPanel() {
   async function signIn(event: React.FormEvent) {
     event.preventDefault();
     setLoginPending(true);
+    setLoginMessage("");
     if (!ADMIN_EMAIL) {
       setLoginPending(false);
-      toast.error("Admin login is not configured. Set VITE_SUPABASE_ADMIN_EMAIL in Netlify.");
+      const message = "Admin login is not configured. Add VITE_SUPABASE_ADMIN_EMAIL in Netlify, then redeploy.";
+      setLoginMessage(message);
+      toast.error(message);
       return;
     }
     if (username.trim().toLowerCase() !== ADMIN_USERNAME.toLowerCase()) {
       setLoginPending(false);
-      toast.error("Incorrect username or password.");
+      const message = "Incorrect username or password.";
+      setLoginMessage(message);
+      toast.error(message);
       return;
     }
-    const { error } = await supabase.auth.signInWithPassword({ email: ADMIN_EMAIL, password });
-    setLoginPending(false);
-    if (error) toast.error(error.message);
+    try {
+      const { error } = await supabase.auth.signInWithPassword({ email: ADMIN_EMAIL, password });
+      if (error) {
+        setLoginMessage(error.message);
+        toast.error(error.message);
+      }
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Could not sign in. Check your connection and try again.";
+      setLoginMessage(message);
+      toast.error(message);
+    } finally {
+      setLoginPending(false);
+    }
   }
 
   async function saveSnack() {
@@ -211,6 +227,7 @@ export default function AdminPanel() {
           <label className="form-label">Username<input type="text" name="username" autoComplete="username" value={username} onChange={event => setUsername(event.target.value)} required /></label>
           <label className="form-label">Password<input type="password" name="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} required /></label>
           <Button type="submit" disabled={loginPending}>{loginPending ? "Signing in…" : "Sign in"}</Button>
+          {loginMessage && <p className="login-message" role="alert">{loginMessage}</p>}
           <a href="/">Return to public site</a>
         </form>
       </div>
