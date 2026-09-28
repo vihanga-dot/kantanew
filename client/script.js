@@ -534,16 +534,15 @@ document.addEventListener('DOMContentLoaded', function() {
 function showPriceSlide(index) {
     if (!priceSlides.length) return;
 
-    // Hide all slides
-    priceSlides.forEach(slide => slide.classList.remove('active'));
+    currentPriceSlide = (index + priceSlides.length) % priceSlides.length;
+    priceSlides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('active', slideIndex === currentPriceSlide);
+    });
 
-    // Show the selected slide
-    if (priceSlides[index]) {
-        priceSlides[index].classList.add('active');
+    const slider = document.getElementById('priceCarousel');
+    if (slider) {
+        slider.style.transform = `translateX(-${currentPriceSlide * 100}%)`;
     }
-
-    // Update current slide index
-    currentPriceSlide = index;
 }
 
 function nextPriceSlide() {
