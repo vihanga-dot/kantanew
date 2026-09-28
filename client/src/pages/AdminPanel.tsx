@@ -66,9 +66,12 @@ const defaultSettings: Settings = {
   about_body: "We make snacks with care in Sri Lanka, bringing quality and warmth to the everyday.",
 };
 
+const ADMIN_USERNAME = (import.meta.env.VITE_ADMIN_USERNAME || "owner").trim();
+const ADMIN_EMAIL = (import.meta.env.VITE_SUPABASE_ADMIN_EMAIL || "").trim();
+
 export default function AdminPanel() {
   const { user, loading, logout } = useAuth();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginPending, setLoginPending] = useState(false);
   const [section, setSection] = useState<"catalog" | "site">("catalog");
@@ -102,7 +105,17 @@ export default function AdminPanel() {
   async function signIn(event: React.FormEvent) {
     event.preventDefault();
     setLoginPending(true);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (!ADMIN_EMAIL) {
+      setLoginPending(false);
+      toast.error("Admin login is not configured. Set VITE_SUPABASE_ADMIN_EMAIL in Netlify.");
+      return;
+    }
+    if (username.trim().toLowerCase() !== ADMIN_USERNAME.toLowerCase()) {
+      setLoginPending(false);
+      toast.error("Incorrect username or password.");
+      return;
+    }
+    const { error } = await supabase.auth.signInWithPassword({ email: ADMIN_EMAIL, password });
     setLoginPending(false);
     if (error) toast.error(error.message);
   }
@@ -194,9 +207,9 @@ export default function AdminPanel() {
           <div className="studio-mark large"><ChefHat size={26} /></div>
           <span className="eyebrow">Kanta Studio</span>
           <h1>Owner sign in</h1>
-          <p>Use the Supabase owner account to manage the public catalog.</p>
-          <label className="form-label">Email<input type="email" value={email} onChange={event => setEmail(event.target.value)} required /></label>
-          <label className="form-label">Password<input type="password" value={password} onChange={event => setPassword(event.target.value)} required /></label>
+          <p>Sign in with your Kanta Studio username and password.</p>
+          <label className="form-label">Username<input type="text" name="username" autoComplete="username" value={username} onChange={event => setUsername(event.target.value)} required /></label>
+          <label className="form-label">Password<input type="password" name="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} required /></label>
           <Button type="submit" disabled={loginPending}>{loginPending ? "Signing in…" : "Sign in"}</Button>
           <a href="/">Return to public site</a>
         </form>
@@ -209,7 +222,7 @@ export default function AdminPanel() {
     <div className="studio-shell">
       <aside className="studio-sidebar">
         <div className="studio-brand"><div className="studio-mark"><ChefHat size={18} /></div><div><strong>Kanta</strong><span>Studio</span></div></div>
-        <div className="studio-owner-card"><span className="eyebrow">Owner workspace</span><strong>{user.name || "Kanta owner"}</strong><span>{user.email}</span></div>
+        <div className="studio-owner-card"><span className="eyebrow">Owner workspace</span><strong>{ADMIN_USERNAME}</strong><span>Private Kanta Studio account</span></div>
         <nav className="studio-nav">
           <button className={section === "catalog" ? "active" : ""} onClick={() => setSection("catalog")}><PackagePlus size={17} /> Catalog <ChevronRight size={15} /></button>
           <button className={section === "site" ? "active" : ""} onClick={() => setSection("site")}><Settings2 size={17} /> Site content <ChevronRight size={15} /></button>
