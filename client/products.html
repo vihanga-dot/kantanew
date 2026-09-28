@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our wide range of premium snacks. Filter by price and color.">
+    <meta name="keywords" content="snacks, cookies, Sri Lanka, Kanta products">
+    <title>Products — Kanta</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/logo_2febb1b4.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logo_2febb1b4.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/logo_2febb1b4.jpg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+                    <div class="logo">K</div>
+                    <div class="company-name">Kanta</div>
+                </a>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="about.html">Our story</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Products Section -->
+    <div class="page-header">
+        <h1>Find your favourite.</h1>
+        <p>Colourful, familiar snacks made for sharing.</p>
+    </div>
+
+    <div class="container">
+        <div class="products-container">
+            <div class="filter-sidebar">
+                <h2 style="color: var(--primary-red); margin-bottom: 1.5rem;">Product Categories</h2>
+                <div class="filter-group">
+                    <label for="priceSelect" style="display: block; margin-bottom: 0.5rem; color: var(--primary-red);">Price Range:</label>
+                    <select id="priceSelect" onchange="updateProductDropdown(); filterProductsByDropdown();" class="filter-dropdown">
+                        <option value="">All Prices</option>
+                        <option value="200">Rs. 200</option>
+                        <option value="100">Rs. 100</option>
+                        <option value="70">Rs. 70</option>
+                        <option value="60">Rs. 60</option>
+                        <option value="50">Rs. 50</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="productSelect" style="display: block; margin-bottom: 0.5rem; color: var(--primary-red);">Product Name:</label>
+                    <select id="productSelect" onchange="filterProductsByDropdown()" class="filter-dropdown">
+                        <option value="">All Products</option>
+                    </select>
+                </div>
+
+                <button class="btn-secondary" onclick="clearDropdownFilters()" style="margin-top: 1.5rem;">Clear Filters</button>
+            </div>
+            <div class="products-main">
+                <div class="product-grid" id="productGrid">
+                    <!-- Products will be dynamically populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h2 id="modalTitle" style="color: var(--primary-red);"></h2>
+            <p><strong>Price:</strong> <span id="modalPrice"></span></p>
+            <p><strong>Weight:</strong> <span id="modalWeight"></span></p>
+            <p><strong>Color:</strong> <span id="modalColor"></span></p>
+            <p id="modalDescription" style="margin-top: 1rem;"></p>
+            <div id="modalColors" style="margin-top: 1rem;"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Kanta</h3>
+                <p>Sri Lanka's premier snacks manufacturer, delivering quality and taste since 2014.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/17awjS5zvb/" target="_blank" title="Facebook" class="social-icon"><img src="/images/facebook_ea4439f9.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/kantasnackspvtltd2014?igsh=NWIzcjJwNzA1bm53" target="_blank" title="Instagram" class="social-icon"><img src="/images/instagram_fce42bfc.png" alt="Instagram"></a>
+                    <a href="https://wa.me/+94723822999" target="_blank" title="WhatsApp" class="social-icon"><img src="/images/whatsapp_f869f957.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 No 160, koongahamula, Kandy Rd, Palapathwela, Sri Lanka</p>
+                <p>📞 +94 72 382 2999</p>
+                <p>📧 kandytastyfood@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kanta Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/script.js"></script>
+</body>
+</html>

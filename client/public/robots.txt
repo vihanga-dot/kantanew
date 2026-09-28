@@ -1,0 +1,41 @@
+# Kanta Biscuit Company - robots.txt
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow access to sensitive directories
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+
+
+# Crawl delay (optional, in seconds)
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://www.kanta.lk/sitemap.xml
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+# Block bad bots (optional)
+User-agent: BadBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 30
+
+User-agent: SemrushBot
+Crawl-delay: 30

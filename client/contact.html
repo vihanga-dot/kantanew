@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Kanta snacks. Send us a message or visit our location in Colombo, Sri Lanka.">
+    <meta name="keywords" content="contact Kanta, snacks company Sri Lanka, location">
+    <title>Contact — Kanta</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/logo_2febb1b4.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logo_2febb1b4.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/logo_2febb1b4.jpg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+                    <div class="logo">K</div>
+                    <div class="company-name">Kanta</div>
+                </a>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">Our story</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Let’s keep in touch.</h1>
+        <p>Questions, ideas, or just want to say hello?</p>
+    </div>
+
+    <!-- Contact Content -->
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3 style="color: var(--primary-red); margin-bottom: 1.5rem;">Send Us a Message</h3>
+                <form id="contactForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+94 XX XXX XXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="How can we help you?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </div>
+            <div class="contact-info">
+                <h3 style="color: var(--primary-red); margin-bottom: 1.5rem;">Get In Touch</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>Address</strong>
+                        <p>No 160, koongahamula<br>Kandy Rd<br>Palapathwela<br>Sri Lanka</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <strong>Phone</strong>
+                        <p>+94 72 382 2999</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>Email</strong>
+                        <p>kandytastyfood@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <div>
+                        <strong>Business Hours</strong>
+                        <p>Monday - Saturday: 09:00 AM - 6:00 PM<br>
+                        Sunday: Closed</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div>
+                        <strong>Follow Us</strong>
+                        <div class="social-links" style="margin-top: 0.5rem;">
+                            <a href="https://www.facebook.com/share/17awjS5zvb/" target="_blank" title="Facebook" class="social-icon"><img src="/images/facebook_ea4439f9.png" alt="Facebook"></a>
+                            <a href="https://www.instagram.com/kantasnackspvtltd2014?igsh=NWIzcjJwNzA1bm53" target="_blank" title="Instagram" class="social-icon"><img src="/images/instagram_fce42bfc.png" alt="Instagram"></a>
+                            <a href="https://wa.me/+94723822999" target="_blank" title="WhatsApp" class="social-icon"><img src="/images/whatsapp_f869f957.png" alt="WhatsApp"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d126583.44685853609!2d80.54136701924608!3d7.494734493781631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNo%20160%2C%20koongahamula%2C%20Kandy%20Rd%2C%20Palapathwela%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1763523675279!5m2!1sen!2slk" 
+                allowfullscreen="" 
+                loading="lazy"
+                title="Kanta Biscuits Location Map">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Kanta</h3>
+                <p>Sri Lanka's premier snacks manufacturer, delivering quality and taste since 2014.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/17awjS5zvb/" target="_blank" title="Facebook" class="social-icon"><img src="/images/facebook_ea4439f9.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/kantasnackspvtltd2014?igsh=NWIzcjJwNzA1bm53" target="_blank" title="Instagram" class="social-icon"><img src="/images/instagram_fce42bfc.png" alt="Instagram"></a>
+                    <a href="https://wa.me/+94723822999" target="_blank" title="WhatsApp" class="social-icon"><img src="/images/whatsapp_f869f957.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 No 160, koongahamula, Kandy Rd, Palapathwela, Sri Lanka</p>
+                <p>📞 +94 72 382 2999</p>
+                <p>📧 kandytastyfood@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kanta Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/script.js"></script>
+    <script>
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const messageDiv = document.getElementById('formMessage');
+            
+            // For demonstration - replace with actual PHP handler
+            messageDiv.innerHTML = '<div class="success-message">Thank you for contacting us! We will get back to you soon.</div>';
+            messageDiv.style.display = 'block';
+            this.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+            
+            /* Uncomment when PHP is ready:
+            fetch('send_email.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.success) {
+                    messageDiv.innerHTML = '<div class="success-message">' + data.message + '</div>';
+                    this.reset();
+                } else {
+                    messageDiv.innerHTML = '<div class="error-message">' + data.message + '</div>';
+                }
+                messageDiv.style.display = 'block';
+            })
+            .catch(error => {
+                messageDiv.innerHTML = '<div class="error-message">An error occurred. Please try again.</div>';
+                messageDiv.style.display = 'block';
+            });
+            */
+        });
+    </script>
+</body>
+</html>

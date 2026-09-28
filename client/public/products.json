@@ -1,0 +1,434 @@
+[
+  {
+    "name": "super ball",
+    "price": 50,
+    "color": "blue",
+    "weight": "18g",
+    "image": "/images/super_ball_blue_50_cf7eb809.jpg",
+    "description": "Traditional butter cookies with a golden crisp texture. Made with premium butter and finest ingredients."
+  },
+  {
+    "name": "super ball",
+    "price": 50,
+    "color": "pink",
+    "weight": "18g",
+    "image": "/images/super_ball_red_50_4137de6b.jpg",
+    "description": "Fresh lemon flavor in every cookie. Light, crispy, and refreshing."
+  },
+  {
+    "name": "super ball",
+    "price": 50,
+    "color": "purple",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "super ball",
+    "price": 50,
+    "color": "green",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "sweet ball",
+    "price": 50,
+    "color": "green",
+    "weight": "18g",
+    "image": "/images/sweet_ball_green_50_0933c193.jpg",
+    "description": "Sweet honey flavored graham crackers. Perfect for snacking."
+  },
+  {
+    "name": "sweet ball",
+    "price": 50,
+    "color": "blue",
+    "weight": "18g",
+    "image": "/images/sweet_ball_blue_50_9702e35a.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "sweet ball",
+    "price": 50,
+    "color": "orange",
+    "weight": "18g",
+    "image": "/images/sweet_ball_orange_50_cfa964c5.jpg",
+    "description": "Rich chocolate flavored square biscuits. Perfect with tea or coffee."
+  },
+  {
+    "name": "sweet ball",
+    "price": 50,
+    "color": "pink",
+    "weight": "18g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Spicy ginger cookies with a satisfying snap. A classic favorite."
+  },
+  {
+    "name": "krispy",
+    "price": 50,
+    "color": "yellow",
+    "weight": "18g",
+    "image": "/images/krispy_yellow_50_3b4e9809.jpg",
+    "description": "Tropical coconut flavored cookies. Crispy and delicious."
+  },
+  {
+    "name": "happy ball",
+    "price": 50,
+    "color": "orange",
+    "weight": "18g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "happy ball",
+    "price": 50,
+    "color": "blue",
+    "weight": "18g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "happy ball",
+    "price": 50,
+    "color": "pink",
+    "weight": "18g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "happy ball",
+    "price": 50,
+    "color": "green",
+    "weight": "18g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "spicy dot",
+    "price": 50,
+    "color": "blue",
+    "weight": "18g",
+    "image": "/images/spicy_dot_50_1457c89f.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "spicy dot",
+    "price": 50,
+    "color": "budget",
+    "weight": "18g",
+    "image": "/images/spicy_dot_budget_50_347908e7.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "spicy dot",
+    "price": 50,
+    "color": "green",
+    "weight": "18g",
+    "image": "/images/spicy_dot_50_1457c89f.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "spicy dot",
+    "price": 50,
+    "color": "brown",
+    "weight": "18g",
+    "image": "/images/spicy_dot_50_1457c89f.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "tomato blast",
+    "price": 50,
+    "color": "blue",
+    "weight": "18g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "masala puff",
+    "price": 50,
+    "color": "blue",
+    "weight": "18g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "crazy cock",
+    "price": 50,
+    "color": "red",
+    "weight": "18g",
+    "image": "/images/crazy_cock_red_50_76b2fa98.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "crazy cock",
+    "price": 50,
+    "color": "green",
+    "weight": "18g",
+    "image": "/images/crazy_cock_green_50_dd96a970.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "crazy cock",
+    "price": 50,
+    "color": "orange",
+    "weight": "18g",
+    "image": "/images/crazy_cock_orange_50_5152bc37.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "cheese and onion",
+    "price": 50,
+    "color": "blue",
+    "weight": "18g",
+    "image": "/images/cheese_and_onion_blue_50_0a2a5901.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "cheese and onion",
+    "price": 50,
+    "color": "yellow",
+    "weight": "18g",
+    "image": "/images/cheese_and_onion_yellow_50_652dff43.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "cheese and onion",
+    "price": 50,
+    "color": "red",
+    "weight": "18g",
+    "image": "/images/cheese_and_onion_red_50_9235a0f3.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "omelett",
+    "price": 50,
+    "color": "yellow",
+    "weight": "18g",
+    "image": "/images/omelett_50_22fe5cb5.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "masala puff",
+    "price": 60,
+    "color": "red",
+    "weight": "18g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "masala puff",
+    "price": 70,
+    "color": "yellow",
+    "weight": "150g",
+    "image": "/images/masala_puff_70_02ac3ae9.jpg",
+    "description": "Sweet vanilla cream filling between crispy biscuits. A delightful treat."
+  },
+  {
+    "name": "super ball",
+    "price": 70,
+    "color": "orange",
+    "weight": "160g",
+    "image": "/images/super_ball_orange_70_84cfea23.jpg",
+    "description": "Chocolate cream sandwiched between chocolate biscuits. Double chocolate delight!"
+  },
+  {
+    "name": "super ball",
+    "price": 70,
+    "color": "yellow",
+    "weight": "145g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Light and crispy wafers with strawberry cream. Perfect for afternoon tea."
+  },
+  {
+    "name": "top corn",
+    "price": 70,
+    "color": "yellow",
+    "weight": "145g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Light and crispy wafers with strawberry cream. Perfect for afternoon tea."
+  },
+  {
+    "name": "masala puff",
+    "price": 100,
+    "color": "M1",
+    "weight": "40g",
+    "image": "/images/masala_puff_100_7db6a8bf.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "masala puff",
+    "price": 100,
+    "color": "M2",
+    "weight": "40g",
+    "image": "/images/masala_puff_100_7db6a8bf.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "masala puff",
+    "price": 100,
+    "color": "M3",
+    "weight": "40g",
+    "image": "/images/masala_puff_100_7db6a8bf.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "masala puff",
+    "price": 100,
+    "color": "green",
+    "weight": "40g",
+    "image": "/images/masala_puff_100_7db6a8bf.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "masala puff",
+    "price": 100,
+    "color": "white",
+    "weight": "40g",
+    "image": "/images/masala_puff_100_7db6a8bf.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "garlic puff",
+    "price": 100,
+    "color": "G1",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "garlic puff",
+    "price": 100,
+    "color": "G2",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "garlic puff",
+    "price": 100,
+    "color": "G3",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "BBQ",
+    "price": 100,
+    "color": "maroon",
+    "weight": "40g",
+    "image": "/images/bbq_maroon_100_b76ba926.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "BBQ",
+    "price": 100,
+    "color": "purple",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "krispy",
+    "price": 100,
+    "color": "blue",
+    "weight": "40g",
+    "image": "/images/krispy_blue_100_bbfb0458.jpg",
+    "description": "Soft red velvet flavored round biscuits with a hint of cocoa."
+  },
+  {
+    "name": "krispy",
+    "price": 100,
+    "color": "orange",
+    "weight": "40g",
+    "image": "/images/krispy_orange_100_3b3b4da1.jpg",
+    "description": "Our premium butter cookies in a larger pack. Extra buttery and crispy."
+  },
+  {
+    "name": "krispy",
+    "price": 100,
+    "color": "yellow",
+    "weight": "40g",
+    "image": "/images/krispy_yellow_100_e2a25faa.jpg",
+    "description": "Loaded with chocolate chips. Every bite is chocolaty heaven."
+  },
+  {
+    "name": "krispy",
+    "price": 100,
+    "color": "green",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Crunchy almond cookies with real almond pieces. Nutritious and delicious."
+  },
+  {
+    "name": "krispy",
+    "price": 100,
+    "color": "magenta",
+    "weight": "40g",
+    "image": "/images/krispy_magenta_100_e9a1144a.jpg",
+    "description": "Sweet raspberry flavored cookies with a tangy twist."
+  },
+  {
+    "name": "tomato blast",
+    "price": 100,
+    "color": "brown",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Premium chocolate chip cookies with extra large chocolate chips. Pure indulgence."
+  },
+  {
+    "name": "spicy dot",
+    "price": 100,
+    "color": "red",
+    "weight": "40g",
+    "image": "/images/spicy_dot_100_47ce699d.jpg",
+    "description": "A beautiful gift box with an assortment of our finest biscuits. Perfect for gifting."
+  },
+  {
+    "name": "super ball",
+    "price": 100,
+    "color": "blue",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Rich dark chocolate cookies for the sophisticated palate. 70% cocoa content."
+  },
+  {
+    "name": "super ball",
+    "price": 100,
+    "color": "orange",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "super ball",
+    "price": 100,
+    "color": "purple",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Decadent caramel flavored cookies with a rich buttery taste."
+  },
+  {
+    "name": "super ball",
+    "price": 100,
+    "color": "aqua",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Classic oatmeal cookies with raisins. A wholesome treat."
+  },
+  {
+    "name": "happy ball",
+    "price": 100,
+    "color": "orange",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Our finest butter cookies in an elegant package. Perfect for special occasions."
+  },
+  {
+    "name": "paty",
+    "price": 200,
+    "color": "pink",
+    "weight": "40g",
+    "image": "/images/logo_2febb1b4.jpg",
+    "description": "Decadent caramel flavored cookies with a rich buttery taste."
+  }
+]

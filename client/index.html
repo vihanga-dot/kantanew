@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kanta snacks — familiar Sri Lankan flavours, made with care since 2014.">
+  <title>Kanta — Made for the little moments</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/jpeg" href="/images/logo_2febb1b4.jpg">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="announcement">Made in Sri Lanka · Shared everywhere</div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-section"><a href="index.html" aria-label="Kanta home"><div class="logo" aria-hidden="true"></div><div class="company-name">Kanta</div></a></div>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">Our story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="hero" aria-label="Kanta highlights">
+      <div class="hero-slider" id="heroSlider">
+        <div class="hero-slide" style="background-image:url('/images/hero_1_09b6c977.jpg');">
+          <div class="hero-content"><h1>A little joy, packed fresh.</h1><p>Familiar flavours and satisfying crunch for tea breaks, school bags, and every in-between moment.</p><a class="btn-primary" href="products.html">Explore the range</a></div>
+        </div>
+        <div class="hero-slide" style="background-image:url('/images/hero_2_edde8aac.jpg');">
+          <div class="hero-content"><h1>Good ingredients. Good company.</h1><p>We make snacks with care in Sri Lanka, bringing quality and warmth to the everyday.</p><a class="btn-primary" href="about.html">Meet Kanta</a></div>
+        </div>
+        <div class="hero-slide" style="background-image:url('/images/hero_3_6e2eade1.jpg');">
+          <div class="hero-content"><h1>Made to be passed around.</h1><p>From classic favourites to colourful new picks, there is a Kanta for every table.</p><a class="btn-primary" href="contact.html">Talk to us</a></div>
+        </div>
+      </div>
+      <div class="slider-controls" aria-label="Hero slides"><button class="slider-dot active" onclick="goToSlide(0)" aria-label="Show first slide"></button><button class="slider-dot" onclick="goToSlide(1)" aria-label="Show second slide"></button><button class="slider-dot" onclick="goToSlide(2)" aria-label="Show third slide"></button></div>
+    </section>
+
+    <section class="container quality-promise-section">
+      <h2 class="section-title">The good stuff is in the details.</h2>
+      <div class="promise-grid">
+        <article class="promise-card"><h3>Ingredients we trust</h3><p>We choose quality ingredients and keep our process focused on the taste people come back for.</p></article>
+        <article class="promise-card"><h3>Made with care</h3><p>Every Kanta snack is part of a simple promise: make it well, pack it fresh, and share it generously.</p></article>
+        <article class="promise-card"><h3>For every kind of moment</h3><p>Bright, familiar, and easy to enjoy — from a quick bite to a table full of friends.</p></article>
+      </div>
+    </section>
+
+    <section class="container" aria-labelledby="price-heading">
+      <h2 class="section-title" id="price-heading">Find your favourite.</h2>
+      <div class="price-cards-carousel-outer">
+        <button class="carousel-btn prev-btn" id="prevBtn" onclick="prevPriceSlide(); return false;" aria-label="Previous price range">‹</button>
+        <div class="price-cards-carousel"><div class="carousel-container"><div id="priceCarousel">
+          <div class="price-card-slide" style="background-image:url('/images/50_price_bg_2464911d.jpg');"><div class="price-value">Rs. 50</div><p>Everyday favourites</p><a href="products.html?price=50" class="btn-primary">View snacks</a></div>
+          <div class="price-card-slide" style="background-image:url('/images/hero_1_09b6c977.jpg');"><div class="price-value">Rs. 60</div><p>A little something extra</p><a href="products.html?price=60" class="btn-primary">View snacks</a></div>
+          <div class="price-card-slide" style="background-image:url('/images/70_price_bg_31362626.jpg');"><div class="price-value">Rs. 70</div><p>For the sharing plate</p><a href="products.html?price=70" class="btn-primary">View snacks</a></div>
+          <div class="price-card-slide" style="background-image:url('/images/100_price_bg_637f36ea.jpg');"><div class="price-value">Rs. 100</div><p>More to love</p><a href="products.html?price=100" class="btn-primary">View snacks</a></div>
+          <div class="price-card-slide" style="background-image:url('/images/hero_2_edde8aac.jpg');"><div class="price-value">Rs. 200</div><p>Bring home the range</p><a href="products.html?price=200" class="btn-primary">View snacks</a></div>
+          <div class="price-card-slide" style="background-image:url('/images/all_price_bg_cbe08bec.jpg');"><div class="price-value">All of it</div><p>The complete Kanta range</p><a href="products.html" class="btn-primary">View all snacks</a></div>
+        </div></div></div></div>
+        <button class="carousel-btn next-btn" id="nextBtn" onclick="nextPriceSlide(); return false;" aria-label="Next price range">›</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="footer-content">
+    <div class="footer-section"><h3>Kanta</h3><p>Sri Lankan snacks made for the little moments that make a day.</p><div class="social-links"><a href="https://www.facebook.com/share/17awjS5zvb/" target="_blank" rel="noreferrer" title="Facebook" class="social-icon"><img src="/images/facebook_ea4439f9.png" alt="Facebook"></a><a href="https://www.instagram.com/kantasnackspvtltd2014" target="_blank" rel="noreferrer" title="Instagram" class="social-icon"><img src="/images/instagram_fce42bfc.png" alt="Instagram"></a><a href="https://wa.me/+94723822999" target="_blank" rel="noreferrer" title="WhatsApp" class="social-icon"><img src="/images/whatsapp_f869f957.png" alt="WhatsApp"></a></div></div>
+    <div class="footer-section"><h3>Explore</h3><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">Our story</a><a href="contact.html">Contact</a></div>
+    <div class="footer-section"><h3>Come say hello</h3><p>No 160, Koongahamula, Kandy Rd, Palapathwela, Sri Lanka</p><p>+94 72 382 2999<br>kandytastyfood@gmail.com</p></div>
+  </div><div class="footer-bottom"><p>© 2025 Kanta Company. All rights reserved.</p></div></footer>
+  <script type="module" src="/script.js"></script>
+  <script>document.querySelector('.menu-toggle')?.addEventListener('click', function(){ this.setAttribute('aria-expanded', document.getElementById('navLinks').classList.contains('active')); });</script>
+</body>
+</html>
